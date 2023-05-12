@@ -1,0 +1,7 @@
+name: nodd-download
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - s3fs=2022.11.0
+  - xarray=2022.11.0
