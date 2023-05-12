@@ -22,22 +22,26 @@ fs = s3fs.S3FileSystem(anon=True)
 bucket = 'noaa-jpss'
 satellite = 'NOAA20'
 sensor = 'SOUNDINGS'
-product = 'NOAA20_NUCAPS-OLR'
+product = 'NOAA20_NUCAPS-EDR'
+# other choices: NOAA20_NUCAPS-EDR, NOAA20_NUCAPS-CCR, NOAA20_NUCAPS-OLR
 
-# optional: use specific date
+# use specific date
 year = 2023
 month = 4
 day = 22
 
-# optional: use today's date 
+start_time = '0000'
+end_time = '2359'
+
+# Optional: use today's date 
 # dt = datetime.datetime.now()
 # year = dt.strftime('%Y')
 # month = dt.strftime('%m')
 # day = dt.strftime('%d')
 
-# optional: start/end hour-min
-start_time = '0000'
-end_time = '2359'
+# one_hour_ago = dt - datetime.timedelta(hours=1)
+# start_time = dt.strftime('%H%m')
+# end_time = one_hour_ago.strftime('%H%m')
 
 files_path = bucket + '/' + satellite + '/'  + sensor + '/' + product + '/' + str(year) + '/' + str(month).zfill(2) + '/' + str(day).zfill(2)
 files = fs.ls(files_path)

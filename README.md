@@ -15,7 +15,41 @@ conda install s3fs -c conda-forge
 ```
 
 ## Editing the script
-You will need to open up the ```download_data.py``` file and edit the date range that you are downloading. The script can be easilly altered to download another JPSS product.
+You will need to open up the ```download_data.py``` file and edit the date product and date range that you are downloading. The script can be easilly altered to download another JPSS product.
+
+select the product:
+```python
+product = 'NOAA20_NUCAPS-EDR'
+# other choices: NOAA20_NUCAPS-EDR, NOAA20_NUCAPS-CCR, NOAA20_NUCAPS-OLR
+```
+
+Update the date range:
+
+```python
+year = 2023
+month = 4
+day = 22
+
+start_time = '0000'
+end_time = '2359'
+```
+
+You can also download the most recent data using:
+```python
+# use today's date 
+dt = datetime.datetime.now()
+year = dt.strftime('%Y')
+month = dt.strftime('%m')
+day = dt.strftime('%d')
+
+start/end hour-min
+one_hour_ago = dt - datetime.timedelta(hours=1)
+
+start_time = dt.strftime('%H%m')
+end_time = one_hour_ago.strftime('%H%m')
+```
+
+Save and exit the script when you are done.
 
 ## Running the Script
 To run the script, simply type:
