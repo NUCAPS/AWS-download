@@ -40,8 +40,8 @@ end_time = '2359'
 # day = dt.strftime('%d')
 
 # one_hour_ago = dt - datetime.timedelta(hours=1)
-# start_time = dt.strftime('%H%m')
-# end_time = one_hour_ago.strftime('%H%m')
+# start_time = one_hour_ago.strftime('%H%m')
+# end_time = dt.strftime('%H%m')
 
 files_path = bucket + '/' + satellite + '/'  + sensor + '/' + product + '/' + str(year) + '/' + str(month).zfill(2) + '/' + str(day).zfill(2)
 files = fs.ls(files_path)

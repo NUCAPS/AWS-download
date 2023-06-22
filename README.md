@@ -45,8 +45,8 @@ day = dt.strftime('%d')
 start/end hour-min
 one_hour_ago = dt - datetime.timedelta(hours=1)
 
-start_time = dt.strftime('%H%m')
-end_time = one_hour_ago.strftime('%H%m')
+start_time = one_hour_ago.strftime('%H%m')
+end_time = dt.strftime('%H%m')
 ```
 
 Save and exit the script when you are done.
